@@ -9,8 +9,8 @@ export default function Profile({ user, setUser, showNotif, navigate }) {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
 
-  // ✅ Use EC2 backend
-  const API_BASE_URL = "http://ec2-13-59-26-72.us-east-2.compute.amazonaws.com:8081";
+  // ✅ Updated EC2 backend
+  const API_BASE_URL = "http://ec2-50-18-16-92.us-west-1.compute.amazonaws.com:8081";
 
   const isStrongPassword = (password) => {
     const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()\-_=+{};:,<.>])(?=.*\d).{8,}$/;

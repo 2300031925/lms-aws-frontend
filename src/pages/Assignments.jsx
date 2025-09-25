@@ -6,8 +6,8 @@ export default function Assignments() {
   const [selectedFiles, setSelectedFiles] = useState({});
   const [uploadMessages, setUploadMessages] = useState({});
 
-  // Define your EC2 backend URL here
-  const API_BASE_URL = "http://ec2-13-59-26-72.us-east-2.compute.amazonaws.com:8081";
+  // ✅ Updated EC2 backend URL
+  const API_BASE_URL = "http://ec2-50-18-16-92.us-west-1.compute.amazonaws.com:8081";
 
   useEffect(() => {
     axios.get(`${API_BASE_URL}/api/assignments`)
@@ -27,11 +27,11 @@ export default function Assignments() {
       return;
     }
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('assignmentId', assignmentId);
+    formData.append("file", file);
+    formData.append("assignmentId", assignmentId);
 
     axios.post(`${API_BASE_URL}/api/assignments/upload`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
+      headers: { "Content-Type": "multipart/form-data" },
     }).then(() => {
       setUploadMessages(prev => ({ ...prev, [assignmentId]: "Upload successful!" }));
     }).catch(() => {

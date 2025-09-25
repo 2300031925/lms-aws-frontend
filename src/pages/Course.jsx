@@ -7,8 +7,8 @@ export default function Course() {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
 
-  // Define base URL once
-  const API_BASE_URL = "http://ec2-13-59-26-72.us-east-2.compute.amazonaws.com:8081";
+  // ✅ Updated EC2 backend
+  const API_BASE_URL = "http://ec2-50-18-16-92.us-west-1.compute.amazonaws.com:8081";
 
   useEffect(() => {
     axios.get(`${API_BASE_URL}/api/courses/${id}`)
